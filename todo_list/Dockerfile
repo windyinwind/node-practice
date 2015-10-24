@@ -17,10 +17,10 @@ RUN mkdir -p /app
 WORKDIR /app
 
 # 复制应用进入到镜像中
-COPY ./*.js /app
+COPY ./ /app
 
 # 对外开放的服务接口为 8080
-EXPOSE 8080
+EXPOSE 3000
 
 # 容器运行时默认调用的启动命令
 CMD ["node /app/http_get_post.js"]
