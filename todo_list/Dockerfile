@@ -1,16 +1,4 @@
-FROM node:slim
-
-MAINTAINER DaoCloud <example@daocloud.io>
-
-RUN apt-get update \
-    && apt-get install -y git ssh-client ca-certificates --no-install-recommends \
-    && rm -r /var/lib/apt/lists/*
-
-RUN echo "Asia/Shanghai" > /etc/timezone \
-    && dpkg-reconfigure -f noninteractive tzdata
-
-# 给 Docker 文件系统中添加根目录，也是 Linux 的一些基础目录。
-ADD /
+FROM node:latest
 
 # 给镜像添加工作目录 /app
 RUN mkdir -p /app
@@ -19,7 +7,7 @@ RUN mkdir -p /app
 WORKDIR /app
 
 # 复制应用进入到镜像中
-COPY . /app
+COPY ./todo_list /app
 
 # 对外开放的服务接口为 3000
 EXPOSE 3000
