@@ -13,4 +13,4 @@ COPY ./ /app
 EXPOSE 3000
 
 # 容器运行时默认调用的启动命令
-CMD ["/bin/bash"]
+CMD ["node","/app/index.js"]
