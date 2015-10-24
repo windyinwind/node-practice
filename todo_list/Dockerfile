@@ -7,7 +7,7 @@ RUN mkdir -p /app
 WORKDIR /app
 
 # 复制应用进入到镜像中
-COPY ./todo_list /app
+COPY ./ /app
 
 # 对外开放的服务接口为 3000
 EXPOSE 3000
