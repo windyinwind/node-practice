@@ -1,8 +1,13 @@
-var http = require('http');
+var https = require('https');
+var fs = require("fs");
 var todo = require('./todo_list.js');
 var qs = require('querystring');
 var items = [];
-var server = http.createServer(function(req, res){
+var options ={
+    key : fs.readFileSync('./key.pem'),
+    cert: fs.readFileSync('./key-cert.pem')
+}
+var server = https.createServer(options, function(req, res){
     if ('/' == req.url) {
         switch (req.method) {
             case 'GET':

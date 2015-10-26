@@ -1,0 +1,54 @@
+" Press ? for help             |1182                         $admin = new Administration();
+                               |1183                         $admin->retrieveSettings();
+.. (up a dir)                  |1184                         $sendNotifications = false;
+/var/www/r2/                   |1185
+¸ cache/                       |1186                         if ($admin->settings['notify_on'])
+¾ custom/                      |1187                         {
+  ¸ Extension/                 |1188                                 $GLOBALS['log']->info("Notifications: user assignment has changed, checking if user receives notifications");
+  ¸ include/                   |1189                                 $sendNotifications = true;
+  ¾ modules/                   |1190                         }
+    ¸ Accounts/                |1191                         elseif(isset($_REQUEST['send_invites']) && $_REQUEST['send_invites'] == 1)
+    ¸ Bugs/                    |1192                         {
+    ¸ Cases/                   |1193                                 // cn: bug 5795 Send Invites failing for Contacts
+    ¸ Contacts/                |1194                                 $sendNotifications = true;
+    ¸ Leads/                   |1195                         }
+    ¸ Notes/                   |1196                         else
+    ¾ Opportunities/           |1197                         {
+      ¸ language/              |1198                                 $GLOBALS['log']->info("Notifications: not sending e-mail, notify_on is set to OFF");
+      ¸ metadata/              |1199                         }
+      ¸ subpanels/             |1200
+        AppendUploadInfo.php*  |1201
+        GetJobNumber.php       |1202                         if($sendNotifications == true)
+        logic_hooks.php        |1203                         {
+        S2Connector.php        |1204                                 $notify_list = $this->get_notification_recipients();
+    ¸ Tasks/                   |1205                                 foreach ($notify_list as $notify_user)
+  ¸ working/                   |1206                                 {
+    index.html                 |1207                                         $this->send_assignment_notifications($notify_user, $admin);
+¸ data/                        |1208                                 }
+¸ examples/                    |1209                         }
+¸ include/                     |1210                 }
+¸ install/                     |1211                 ////    END ASSIGNMENT NOTIFICATION & MEETING/CALL INVITES
+¸ jscalendar/                  |1212                 ///////////////////////////////////////////////////////////////////////
+¸ log4php/                     |1213
+¸ metadata/                    |1214                 if(isset($this->custom_fields))
+¸ ModuleInstall/               |1215                 {
+¸ modules/                     |1216                         $this->custom_fields->bean =& $this;
+¸ soap/                        |1217                         $this->custom_fields->save($isUpdate);
+¸ test/                        |1218                 }
+¸ themes/                      |1219                 if ($this->db->dbType == "oci8")
+¸ XTemplate/                   |1220                 {
+  acceptDecline.php            |1221
+  acceptJob.php                |1222
+  campaign_tracker.php         |1223
+  campaign_trackerv2.php       |1224
+  config.php [RO]              |1225
+  cron.php                     |1226
+  dictionary.php               |1227
+  download.php                 |1228
+  edit_userprefs_2.php         |1229
+  emailmandelivery.php         |1230
+  export.php                   |1231                 }
+  favicon.ico                  |1232                 if ($this->db->dbType == 'mysql')
+  files.md5                    |1233                 {
+ NERD_tree_1                     NORMAL  BR: 2403_jp  SugarBean.php  save                                                                                                     unix  utf-8  php   25%  LN 1207:48
+search hit BOTTOM, continuing at TOP

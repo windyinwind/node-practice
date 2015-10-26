@@ -1,3 +1,4 @@
+var socketio = require('socket.io');
 var http = require('http');
 var formidable = require('formidable');
 
@@ -12,16 +13,20 @@ var server = http.createServer(function(req, res){
     }
 });
 server.listen(3000);
+io = socketio.listen(server);
 
 
 // helper function
 function show(req, res) {
     var html = ''
+        + "<script src='/socket.io/socket.io.js' type='text/javascript'></script>"
+        + '<script src="http://code.jquery.com/jquery-1.8.0.min.js" type="text/javascript"></script>'
         + '<form method="post" action="/" enctype="multipart/form-data">'
         + '<p><input type="text" name="name" /></p>'
-        + '<p><input type="file" name="file" /></p>'
+        + '<p><input id="file" type="file" name="file" /></p>'
         + '<p><input type="submit" value="Upload" /></p>'
-        + '</form>';
+        + '</form>'
+        + '<script>$(document).ready(function(){var socket = io.connect();socket.on("uploadPct",function(res){alert(res);$("#file").append(res);})})</script>';
     res.setHeader('Content-Type', 'text/html');
     res.setHeader('Content-Length', Buffer.byteLength(html));
     res.end(html);
@@ -48,11 +53,15 @@ function upload(req, res) {
     });
     form.on('progress', function(bytesReceived, bytesExpected){
         var percent = Math.floor(bytesReceived / bytesExpected * 100);
+        showUpoadPct(percent);
         console.log(percent);
     });
 
     form.parse(req);
 
+}
+function showUpoadPct(percent){
+    io.emit('uploadPct',percent+'%');
 }
 function isFormData(req) {
     var type = req.headers['content-type'] || '';
