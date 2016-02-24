@@ -1,0 +1,17 @@
+var fs = require("fs")
+exports.test = function(){console.info("for testing")}
+console.log(__dirname)
+console.log(__filename)
+    console.log("------------------")
+//console.log(global)
+console.log(require.main)
+    console.log("------------------")
+    console.log("------------------")
+    console.log("------------------")
+    console.log("------------------")
+console.log(module)
+    console.log("------------------")
+    console.log("------------------")
+    console.log("------------------")
+console.log(require)
+

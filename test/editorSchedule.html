@@ -1,0 +1,711 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<link rel="SHORTCUT ICON" href="themes/Sugar5/images/sugar_icon.ico?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>S2 | Edanz Editing</title>
+<link rel="stylesheet" type="text/css" href="cache/themes/Sugar5/css/yui.css?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1" /><link rel="stylesheet" type="text/css" href="cache/themes/Sugar5/css/deprecated.css?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1" /><link rel="stylesheet" type="text/css" href="cache/themes/Sugar5/css/style.css?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1" />
+<script>var sugar_cache_dir = 'cache/';</script><script>var sugar_upload_dir = 'cache/upload/';</script><script>var action_sugar_grp1 = 'index';</script><script>jscal_today = 1450269424000; if(typeof app_strings == "undefined") app_strings = new Array();</script><script type="text/javascript" src="include/javascript/sugar_grp1_yui.js?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1"></script><script type="text/javascript" src="include/javascript/sugar_grp1.js?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1"></script><script type="text/javascript" src="include/javascript/calendar.js?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1"></script><script type="text/javascript">SUGAR.themes.image_server="";</script><script type="text/javascript">var name_format = "s f l";</script><script type="text/javascript">
+	var time_reg_format = '([0-9]{1,2}):([0-9]{1,2})';
+	var date_reg_format = '([0-9]{1,2})/([0-9]{1,2})/([0-9]{4})';
+	var date_reg_positions = { 'd': 1,'m': 2,'Y': 3 };
+	var time_separator = ':';
+	var cal_date_format = '%d/%m/%Y';
+	var time_offset = 32400;
+	var num_grp_sep = ',';
+	var dec_sep = '.';
+</script><script type="text/javascript" src="cache/jsLanguage/en_us.js?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1&j=2"></script><script type="text/javascript" src="cache/jsLanguage/edanz_Schedule/en_us.js?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1&j=2"></script><script type="text/javascript" src="cache/themes/Sugar5/js/style.js?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1"></script>
+
+<script type="text/javascript">
+<!--
+SUGAR.themes.theme_name      = 'Sugar5';
+SUGAR.themes.theme_ie6compat = false;
+SUGAR.themes.hide_image      = 'themes/Sugar5/images/hide.gif?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1';
+SUGAR.themes.show_image      = 'themes/Sugar5/images/show.gif?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1';
+SUGAR.themes.allThemes       = eval();
+if ( YAHOO.env.ua )
+    UA = YAHOO.env.ua;
+-->
+</script>
+
+</head>
+<a name="top"></a><body onMouseOut="closeMenus();">
+
+<div id="header">
+    <div id="companyLogo">
+    <a href="index.php?module=Home&action=index" border="0">
+    <img src="custom/themes/default/images/company_logo.png?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1&logo_md5=bcde04b010d54e24f4f0b1277a5e46d3" width="212" height="40" 
+        alt="Company Logo" border="0"/>
+    </a>
+</div>    <div id="globalLinks">
+    <ul>
+        <li>
+        <a id="admin_link" href="index.php?module=Administration&action=index">Admin</a>
+        </li>
+        <li>
+    <span>|</span>    <a id="help_link" href=" javascript:void window.open('index.php?module=Administration&action=SupportPortal&view=documentation&version=6.2.2&edition=CE&lang=en_us&help_module=edanz_Schedule&help_action=index&key=')">Help</a>
+        </li>
+        <li>
+    <span>|</span>    <a id="timezone_link" href="index.php?module=Users&action=EditView&record=1">Your time zone: Asia/Tokyo</a>
+        </li>
+        </ul>
+</div>    <div id="welcome">
+    Welcome, <strong><a id="welcome_link" href='index.php?module=Users&action=EditView&record=1'>Administrator</a></strong> [ <a id="logout_link" href='index.php?module=Users&action=Logout' class='utilsLink'>Log Out</a> ]
+</div>
+    <div class="clear"></div>
+    <div id="search">
+    <form name='UnifiedSearch' onsubmit='return SUGAR.unifiedSearchAdvanced.checkUsaAdvanced()'>
+        <input type="hidden" name="action" value="UnifiedSearch">
+        <input type="hidden" name="module" value="Home">
+        <input type="hidden" name="search_form" value="false">
+        <input type="hidden" name="advanced" value="false">
+        <img id="unified_search_advanced_img" src="themes/Sugar5/images/searchMore.gif?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1" border="0" alt="Search">&nbsp;
+        <input type="text" name="query_string" id="query_string" size="20" value="">&nbsp;
+        <input type="submit" class="button" value="Search">
+    </form><br />
+    <div id="unified_search_advanced_div"> </div>
+</div>
+<div id="sitemapLink">
+    <span id="sitemapLinkSpan">
+        Sitemap
+        <img src="themes/Sugar5/images/MoreDetail.png?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1">
+    </span>
+</div>
+<span id='sm_holder'></span>
+    <div class="clear"></div>
+        <div id="moduleList">
+<ul>
+    <li class="noBorder">&nbsp;</li>
+                    <li>
+        <span class="notCurrentTabLeft">&nbsp;</span><span class="notCurrentTab">
+        <a href="#" id="grouptab_0">Home</a>
+        </span><span class="notCurrentTabRight">&nbsp;</span>
+        </li>
+                <li>
+        <span class="notCurrentTabLeft">&nbsp;</span><span class="notCurrentTab">
+        <a href="#" id="grouptab_1">QC</a>
+        </span><span class="notCurrentTabRight">&nbsp;</span>
+        </li>
+                <li>
+        <span class="notCurrentTabLeft">&nbsp;</span><span class="notCurrentTab">
+        <a href="#" id="grouptab_2">Senior Editors</a>
+        </span><span class="notCurrentTabRight">&nbsp;</span>
+        </li>
+                <li>
+        <span class="notCurrentTabLeft">&nbsp;</span><span class="notCurrentTab">
+        <a href="#" id="grouptab_3">Editor Management</a>
+        </span><span class="notCurrentTabRight">&nbsp;</span>
+        </li>
+                <li>
+        <span class="notCurrentTabLeft">&nbsp;</span><span class="notCurrentTab">
+        <a href="#" id="grouptab_4">Recruitment/HR</a>
+        </span><span class="notCurrentTabRight">&nbsp;</span>
+        </li>
+                <li>
+        <span class="notCurrentTabLeft">&nbsp;</span><span class="notCurrentTab">
+        <a href="#" id="grouptab_5">All</a>
+        </span><span class="notCurrentTabRight">&nbsp;</span>
+        </li>
+    </ul>
+</div>
+<div class="clear"></div>
+<div id="subModuleList">
+                <span id="moduleLink_0" >
+    	<ul>
+	        	        <li>
+	        		        	<a href="index.php?module=Home&action=index&parentTab=Home" id="moduleTab_0_Home">Home</a>
+	        </li>
+	        	        <li>
+	        		        	<a href="index.php?module=edanz_Schedule&action=index&parentTab=Home" id="moduleTab_0_Schedule">Schedule</a>
+	        </li>
+	        	        	        
+        </ul>
+    </span>
+            <span id="moduleLink_1" >
+    	<ul>
+	        	        <li>
+	        		        	<a href="index.php?module=edanz_Feedback&action=index&parentTab=QC" id="moduleTab_1_Feedback">Feedback</a>
+	        </li>
+	        	        <li>
+	        		        	<a href="index.php?module=edanz_Schedule&action=index&parentTab=QC" id="moduleTab_1_Schedule">Schedule</a>
+	        </li>
+	        	        	        
+        </ul>
+    </span>
+            <span id="moduleLink_2" >
+    	<ul>
+	        	        <li>
+	        		        	<a href="index.php?module=edanz_Deliverables&action=index&parentTab=Senior Editors" id="moduleTab_2_Deliverables">Deliverables</a>
+	        </li>
+	        	        <li>
+	        		        	<a href="index.php?module=edanz_Editor&action=index&parentTab=Senior Editors" id="moduleTab_2_Editors">Editors</a>
+	        </li>
+	        	        <li>
+	        		        	<a href="index.php?module=Tasks&action=index&parentTab=Senior Editors" id="moduleTab_2_Tasks">Tasks</a>
+	        </li>
+	        	        <li>
+	        		        	<a href="index.php?module=edanz_Schedule&action=index&parentTab=Senior Editors" id="moduleTab_2_Schedule">Schedule</a>
+	        </li>
+	        	        	        
+        </ul>
+    </span>
+            <span id="moduleLink_3" >
+    	<ul>
+	        	        <li>
+	        		        	<a href="index.php?module=edanz_Schedule&action=index&parentTab=Editor Management" id="moduleTab_3_Schedule">Schedule</a>
+	        </li>
+	        	        <li>
+	        		        	<a href="index.php?module=edanz_Probation&action=index&parentTab=Editor Management" id="moduleTab_3_Probation">Probation</a>
+	        </li>
+	        	        <li>
+	        		        	<a href="index.php?module=edanz_ScheduleNotes&action=index&parentTab=Editor Management" id="moduleTab_3_Schedule Notes">Schedule Notes</a>
+	        </li>
+	        	        	        
+        </ul>
+    </span>
+            <span id="moduleLink_4" >
+    	<ul>
+	        	        <li>
+	        		        	<a href="index.php?module=edanz_Qualification&action=index&parentTab=Recruitment/HR" id="moduleTab_4_Qualifications">Qualifications</a>
+	        </li>
+	        	        <li>
+	        		        	<a href="index.php?module=edanz_MarketingText&action=index&parentTab=Recruitment/HR" id="moduleTab_4_Marketing Text">Marketing Text</a>
+	        </li>
+	        	        <li>
+	        		        	<a href="index.php?module=edanz_Institution&action=index&parentTab=Recruitment/HR" id="moduleTab_4_Institutions">Institutions</a>
+	        </li>
+	        	        <li>
+	        		        	<a href="index.php?module=Documents&action=index&parentTab=Recruitment/HR" id="moduleTab_4_Documents">Documents</a>
+	        </li>
+	        	        <li>
+	        		        	<a href="index.php?module=Emails&action=index&parentTab=Recruitment/HR" id="moduleTab_4_Emails">Emails</a>
+	        </li>
+	        	        <li>
+	        		        	<a href="index.php?module=edanz_AuthoredPaper&action=index&parentTab=Recruitment/HR" id="moduleTab_4_Authored Papers">Authored Papers</a>
+	        </li>
+	        	        <li>
+	        		        	<a href="index.php?module=edanz_Schedule&action=index&parentTab=Recruitment/HR" id="moduleTab_4_Schedule">Schedule</a>
+	        </li>
+	        	        	        
+        </ul>
+    </span>
+            <span id="moduleLink_5" >
+    	<ul>
+	        	        <li>
+	        		        	<a href="index.php?module=Home&action=index&parentTab=All" id="moduleTab_5_Home">Home</a>
+	        </li>
+	        	        <li>
+	        		        	<a href="index.php?module=Calendar&action=index&parentTab=All" id="moduleTab_5_Calendar">Calendar</a>
+	        </li>
+	        	        <li>
+	        		        	<a href="index.php?module=edanz_Editor&action=index&parentTab=All" id="moduleTab_5_Editors">Editors</a>
+	        </li>
+	        	        <li>
+	        		        	<a href="index.php?module=edanz_Schedule&action=index&parentTab=All" id="moduleTab_5_Schedule">Schedule</a>
+	        </li>
+	        	        <li>
+	        		        	<a href="index.php?module=edanz_ScheduleNotes&action=index&parentTab=All" id="moduleTab_5_Schedule Notes">Schedule Notes</a>
+	        </li>
+	        	        <li>
+	        		        	<a href="index.php?module=Documents&action=index&parentTab=All" id="moduleTab_5_Documents">Documents</a>
+	        </li>
+	        	        <li>
+	        		        	<a href="index.php?module=Emails&action=index&parentTab=All" id="moduleTab_5_Emails">Emails</a>
+	        </li>
+	        	        	        <li class="subTabMore">
+	        	<a>>></a>      
+		        <ul class="cssmenu">
+		        					<li>
+						<a href="index.php?module=edanz_Feedback&action=index&parentTab=All">Feedback
+						</a>
+					</li>
+		        					<li>
+						<a href="index.php?module=edanz_Flags&action=index&parentTab=All">Flags
+						</a>
+					</li>
+		        					<li>
+						<a href="index.php?module=Tasks&action=index&parentTab=All">Tasks
+						</a>
+					</li>
+		        					<li>
+						<a href="index.php?module=edanz_Deliverables&action=index&parentTab=All">Deliverables
+						</a>
+					</li>
+		        					<li>
+						<a href="index.php?module=edanz_Qualification&action=index&parentTab=All">Qualifications
+						</a>
+					</li>
+		        					<li>
+						<a href="index.php?module=edanz_Fees&action=index&parentTab=All">Fees
+						</a>
+					</li>
+		        					<li>
+						<a href="index.php?module=edanz_Communications&action=index&parentTab=All">Communications
+						</a>
+					</li>
+		        					<li>
+						<a href="index.php?module=edanz_Authorpreferences&action=index&parentTab=All">Author Preferences
+						</a>
+					</li>
+		        					<li>
+						<a href="index.php?module=edanz_Institution&action=index&parentTab=All">Institutions
+						</a>
+					</li>
+		        					<li>
+						<a href="index.php?module=edanz_AuthoredPaper&action=index&parentTab=All">Authored Papers
+						</a>
+					</li>
+		        					<li>
+						<a href="index.php?module=edanz_MarketingText&action=index&parentTab=All">Marketing Text
+						</a>
+					</li>
+		        					<li>
+						<a href="index.php?module=SecurityGroups&action=index&parentTab=All">Security Groups Management
+						</a>
+					</li>
+		        					<li>
+						<a href="index.php?module=edanz_Probation&action=index&parentTab=All">Probation
+						</a>
+					</li>
+		        					<li>
+						<a href="index.php?module=edanz_Service_fees&action=index&parentTab=All">Service Fees
+						</a>
+					</li>
+		        					<li>
+						<a href="index.php?module=edanz_Workload_unit&action=index&parentTab=All">Workload Unit
+						</a>
+					</li>
+		        		        </ul> 
+	        </li>
+	        	        
+        </ul>
+    </span>
+        
+</div>
+    <div class="clear"></div>
+    <div class="line"></div>
+        <div id="lastView" class="headerList">
+        <b style="white-space:nowrap;">Last Viewed:&nbsp;&nbsp;</b>
+    <span>
+        <span>
+          
+                 <a title="Daniel McGowan [Alt+1]" 
+            accessKey="1" 
+            href="index.php?module=edanz_Editor&action=DetailView&record=462685fb-2e90-8795-1556-46553458de6b">
+          
+            <img src="custom/themes/default/images/edanz_Editor.gif?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1" width="16" height="16" border="0" align="absmiddle" alt="Daniel McGowan" />&nbsp;<span>
+            	            Daniel McGowan
+                        </span>
+        </a>
+    </span>
+        <span>
+          
+                 <a title="Andrew Stow [Alt+2]" 
+            accessKey="2" 
+            href="index.php?module=edanz_Editor&action=DetailView&record=e8c499b1-57c6-8fd9-dcdb-4df1b1d351ab">
+          
+            <img src="custom/themes/default/images/edanz_Editor.gif?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1" width="16" height="16" border="0" align="absmiddle" alt="Andrew Stow" />&nbsp;<span>
+            	            Andrew Stow
+                        </span>
+        </a>
+    </span>
+        <span>
+          
+                 <a title="Abeer Fadl [Alt+3]" 
+            accessKey="3" 
+            href="index.php?module=edanz_Editor&action=DetailView&record=c17acb76-adb8-6c62-25f7-5518c8f38375">
+          
+            <img src="custom/themes/default/images/edanz_Editor.gif?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1" width="16" height="16" border="0" align="absmiddle" alt="Abeer Fadl" />&nbsp;<span>
+            	            Abeer Fadl
+                        </span>
+        </a>
+    </span>
+        <span>
+          
+                 <a title="Aamna Kaul [Alt+4]" 
+            accessKey="4" 
+            href="index.php?module=edanz_Editor&action=DetailView&record=3c64108e-80b3-60de-1ece-53b60c61f6f7">
+          
+            <img src="custom/themes/default/images/edanz_Editor.gif?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1" width="16" height="16" border="0" align="absmiddle" alt="Aamna Kaul" />&nbsp;<span>
+            	            Aamna Kaul
+                        </span>
+        </a>
+    </span>
+        <span>
+          
+                 <a title="Glenn Pennycook [Alt+5]" 
+            accessKey="5" 
+            href="index.php?module=edanz_Editor&action=DetailView&record=d4e58a30-135c-5bd6-6acf-4655377d7d06">
+          
+            <img src="custom/themes/default/images/edanz_Editor.gif?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1" width="16" height="16" border="0" align="absmiddle" alt="Glenn Pennycook" />&nbsp;<span>
+            	            Glenn Pennycook
+                        </span>
+        </a>
+    </span>
+        <span>
+          
+                 <a title="Natasha Beeton-Kempen [Alt+6]" 
+            accessKey="6" 
+            href="index.php?module=edanz_Editor&action=DetailView&record=888b441c-296f-3050-a449-502e09489383">
+          
+            <img src="custom/themes/default/images/edanz_Editor.gif?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1" width="16" height="16" border="0" align="absmiddle" alt="Natasha Beeton-Kempen" />&nbsp;<span>
+            	            Natasha Beeton-
+                        </span>
+        </a>
+    </span>
+        <span>
+          
+                 <a title="Editing Test Feedback -  [Alt+7]" 
+            accessKey="7" 
+            href="index.php?module=Emails&action=DetailView&record=989b05c5-ec3c-229b-9677-56209cb32020">
+          
+            <img src="themes/Sugar5/images/Emails.gif?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1" width="16" height="16" border="0" align="absmiddle" alt="Editing Test Feedback - " />&nbsp;<span>
+            	            Editing Test Fe
+                        </span>
+        </a>
+    </span>
+        <span>
+                          <a title="EditingTest[Alt+8]" 
+            accessKey="8" 
+            href="index.php?module=edanz_Feedback&action=DetailView&record=457e3bb3-8438-12a0-9b9e-56209bc2b4e1">
+         
+            <img src="custom/themes/default/images/edanz_Feedback.gif?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1" width="16" height="16" border="0" align="absmiddle" alt="FishTest" />&nbsp;<span>
+                        	Editing Test
+                        </span>
+        </a>
+    </span>
+        <span>
+                          <a title="EditingTest[Alt+9]" 
+            accessKey="9" 
+            href="index.php?module=edanz_Feedback&action=DetailView&record=59d7659b-d693-10ad-91cb-4d590a241e8f">
+         
+            <img src="custom/themes/default/images/edanz_Feedback.gif?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1" width="16" height="16" border="0" align="absmiddle" alt="FishTest" />&nbsp;<span>
+                        	Editing Test
+                        </span>
+        </a>
+    </span>
+        <span>
+          
+                 <a title="Edanz Editing - FISH Test FEEDBACK - Daniel Boles [Alt+10]" 
+            accessKey="10" 
+            href="index.php?module=Emails&action=DetailView&record=1bec3ca6-8062-66e1-4959-4d5a5b29ed3a">
+          
+            <img src="themes/Sugar5/images/Emails.gif?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1" width="16" height="16" border="0" align="absmiddle" alt="Edanz Editing - FISH Test FEEDBACK - Daniel Boles" />&nbsp;<span>
+            	            Edanz Editing -
+                        </span>
+        </a>
+    </span>
+        </span>
+</div>    <div id="shortcuts" class="headerList">
+    <b style="white-space:nowrap;">Actions:&nbsp;&nbsp;</b>
+    <span>
+        <span style="white-space:nowrap;">
+        <a href="index.php?module=edanz_Editor&action=EditView&return_module=edanz_Editor&return_action=DetailView"><img src="custom/themes/default/images/Createedanz_Editor.gif?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1" width="16" height="16" alt='Create Editor'  border='0' align='absmiddle' />&nbsp;<span>Create Editor</span></a>
+    </span>
+        <span style="white-space:nowrap;">
+        <a href="index.php?module=edanz_Editor&action=index&return_module=edanz_Editor&return_action=DetailView"><img src="custom/themes/default/images/edanz_Editor.gif?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1" width="16" height="16" alt='View Editors'  border='0' align='absmiddle' />&nbsp;<span>View Editors</span></a>
+    </span>
+        <span style="white-space:nowrap;">
+        <a href="index.php?module=edanz_Schedule&action=index"><img src="custom/themes/default/images/edanz_Schedule.gif?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1" width="16" height="16" alt='View Schedule'  border='0' align='absmiddle' />&nbsp;<span>View Schedule</span></a>
+    </span>
+        <span style="white-space:nowrap;">
+        <a href="index.php?module=edanz_ScheduleNotes&action=EditView&return_module=edanz_Schedule&return_action=index"><img src="custom/themes/default/images/Createedanz_ScheduleNotes.gif?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1" width="16" height="16" alt='Create Schedule Note'  border='0' align='absmiddle' />&nbsp;<span>Create Schedule Note</span></a>
+    </span>
+        <span style="white-space:nowrap;">
+        <a href="index.php?module=edanz_ScheduleNotes&action=index&return_module=edanz_Schedule&return_action=index"><img src="custom/themes/default/images/edanz_ScheduleNotes.gif?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1" width="16" height="16" alt='View Schedule Notes'  border='0' align='absmiddle' />&nbsp;<span>View Schedule Notes</span></a>
+    </span>
+        </span>
+</div>
+    </div>
+
+<div id="main">
+    <div id="content" >
+        <table style="width:100%"><tr><td><script type="text/javascript" language="Javascript" defer="defer">
+
+function display_calendar(id){
+	if(this.document.getElementById( id).style.display=='none'){
+		this.document.getElementById( id).style.display='table-row'
+	}else{
+		this.document.getElementById(  id).style.display='none'
+	}
+}
+var editorInfo;
+var eventSource;
+function receiveMessage(event)
+{
+// Do we trust the sender of this message?
+//if (getDomainName(event.origin) != getDomainName(document.location.hostname))
+//  return;
+//alert("message:"+event.data+",\n this message is from"+event.origin+",\n ******for testing please ignore*******");
+editorInfo = event.data;
+// event.source is window.opener
+// event.data is "hello there!"
+
+// Assuming you've verified the origin of the received message (which
+// you must do in any case), a convenient idiom for replying to a
+// message is to call postMessage on event.source and provide
+// event.origin as the targetOrigin.
+eventSource = event;
+event.source.postMessage("recevied Editors success", 
+                        event.origin);
+}
+function getDomainName(hostName)
+{
+    return hostName.substring(hostName.lastIndexOf(".", hostName.lastIndexOf(".") - 1) + 1);
+}
+
+function getMarketingText(id){
+	if( typeof editorInfo=='undefined')return;
+	for(var i = 0; i<editorInfo.length;i++){
+		var editor = editorInfo[i];
+		if(id == editor['id']){
+			return  "<div ><p>"+editor.all_qualifications+"</p><p>"+editor.forsname+"</p></div><div  style='float:left;padding-right:8px'>"+editor.photo+"</div><div style='text-align:justify;line-height:15px'>"+editor.marketing_text_english+"</div>";;
+		}
+	}
+		return "";
+}
+
+function toAssign(id, editorName){
+     //	eventSource.source.focus(); this funciton is attempt to let opener window focus before assign, but it won't work due to browser security restrictions
+	if(  typeof eventSource=='undefined')return;
+	var conf = confirm("Are you sure you want Assign Job to "+editorName+'.');
+	if(conf)eventSource.source.postMessage({"assignJob":id}, eventSource.origin);
+}
+
+
+window.addEventListener("message", receiveMessage, false);
+</script>
+
+<div class='moduleTitle'>
+<h2>Editor Schedule</h2>
+</div>
+<script type="text/javascript" language="JavaScript">
+<!-- Begin
+function toggleDisplay(id){
+
+	if(this.document.getElementById( id).style.display=='none'){
+		this.document.getElementById( id).style.display='inline'
+		if(this.document.getElementById(id+"link") != undefined){
+			this.document.getElementById(id+"link").style.display='none';
+		}
+	}else{
+		this.document.getElementById(  id).style.display='none'
+		if(this.document.getElementById(id+"link") != undefined){
+			this.document.getElementById(id+"link").style.display='inline';
+		}
+	}
+}
+
+function up(name) {
+	var td = document.getElementById(name+'_td');
+	var obj = td.getElementsByTagName('select')[0];
+	obj =(typeof obj == "string") ? document.getElementById(obj) : obj;
+	if(obj.tagName.toLowerCase() != "select" && obj.length < 2)
+		return false;
+	var sel = new Array();
+
+	for(i=0; i<obj.length; i++) {
+		if(obj[i].selected == true) {
+			sel[sel.length] = i;
+		}
+	}
+	for(i in sel) {
+		if(sel[i] != 0 && !obj[sel[i]-1].selected) {
+			var tmp = new Array(obj[sel[i]-1].text, obj[sel[i]-1].value);
+			obj[sel[i]-1].text = obj[sel[i]].text;
+			obj[sel[i]-1].value = obj[sel[i]].value;
+			obj[sel[i]].text = tmp[0];
+			obj[sel[i]].value = tmp[1];
+			obj[sel[i]-1].selected = true;
+			obj[sel[i]].selected = false;
+		}
+	}
+}
+
+function down(name) {
+	var td = document.getElementById(name+'_td');
+	var obj = td.getElementsByTagName('select')[0];
+	if(obj.tagName.toLowerCase() != "select" && obj.length < 2)
+		return false;
+	var sel = new Array();
+	for(i=obj.length-1; i>-1; i--) {
+		if(obj[i].selected == true) {
+			sel[sel.length] = i;
+		}
+	}
+	for(i in sel) {
+		if(sel[i] != obj.length-1 && !obj[sel[i]+1].selected) {
+			var tmp = new Array(obj[sel[i]+1].text, obj[sel[i]+1].value);
+			obj[sel[i]+1].text = obj[sel[i]].text;
+			obj[sel[i]+1].value = obj[sel[i]].value;
+			obj[sel[i]].text = tmp[0];
+			obj[sel[i]].value = tmp[1];
+			obj[sel[i]+1].selected = true;
+			obj[sel[i]].selected = false;
+		}
+	}
+}
+
+
+		//  End -->
+	</script>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td valign=top width="70%" style="padding-right: 10px; padding-top: 2px;">
+<script type="text/javascript" src="include/javascript/sugar_grp_overlib.js?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1"></script><script type="text/javascript" src="include/javascript/postmessage.js?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1"></script><table width="100%" cellpadding="0" cellspacing="0" border="0" class="formHeader h3Row">
+<tr>
+<td nowrap><h3><span>Selected Editors</span></h3></td><td width='20'><img height='1' width='20' src='themes/Sugar5/images/blank.gif?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1' alt=''></td>
+<td valign='middle' nowrap width='100%'><div align="right"><a href="index.php?module=edanz_Schedule&action=index&view=shared" class="tabFormAdvLink">&nbsp;<a href="javascript: toggleDisplay('shared_cal_edit');" class="tabFormAdvLink"><img src="themes/Sugar5/images/edit.gif?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1" width="13" height="13" alt="Select Editors"  border="0"  align="absmiddle" />&nbsp;Select Editors</a></div></td></tr>
+</table><div id='shared_cal_edit' style='display: none;'>
+		<form name='shared_cal' action="index.php" method="get" >
+		<input type="hidden" name="module" value="edanz_Schedule">
+		<input type="hidden" name="action" value="index">
+		<input type="hidden" name="view" value="shared">
+		<input type="hidden" name="edit" value="0"><script>SUGAR.tabChooser.freezeOptions('display_tabs', 'hide_tabs', 'Home');</script><table cellpadding="0" cellspacing="3" border="0" align="center">
+		<tr><td valign="top"><div id="edit_tabs" style=""><h4>Select users for schedule display</h4>        <table cellpadding="0" cellspacing="0" border="0">
+        
+        <tr>
+            <td>&nbsp;</td>
+            <td scope="row" id="chooser_shared_ids_text" align="center"><nobr>Display Editors</nobr></td>            <td>&nbsp;</td>
+            <td scope="row" id="chooser_hidden_ids" align="center"><nobr>Hide Editors</nobr></td><td>&nbsp;</td></tr><tr><td valign="top" style="padding-right: 2px; padding-left: 2px;" align="center"><a onclick="return SUGAR.tabChooser.up('shared_ids','shared_ids','hidden_ids');"><img src="themes/Sugar5/images/uparrow_big.gif?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1" width="13" height="13" border="0" style="margin-bottom: 1px;" alt="" /></a><br>
+                     <a onclick="return SUGAR.tabChooser.down('shared_ids','shared_ids','hidden_ids');"><img src="themes/Sugar5/images/downarrow_big.gif?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1" width="16" height="16" border="0" style="margin-top: 1px;" alt="" /></a>                </td>    
+                <td align="center">
+                    <table border="0" cellspacing=0 cellpadding="0" align="center">
+                        <tr>
+                            <td id="shared_ids_td" align="center">
+                            <select id="shared_ids" name="shared_ids[]" size="10" multiple="multiple" style="width: 150px;"><option value='c85001db-0643-bd44-3fd3-52b8dcc99739'>Sam Pickard</option></select></td>
+            </tr>
+            </table>
+            </td><td valign="top" style="padding-right: 2px; padding-left: 2px;" align="center"><a onclick="return SUGAR.tabChooser.right_to_left('shared_ids','hidden_ids', '10', '10', '');"><img src="themes/Sugar5/images/leftarrow_big.gif?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1" width="16" height="16" border="0" style="margin-right: 1px;" alt="" /></a><a onclick="return SUGAR.tabChooser.left_to_right('shared_ids','hidden_ids', '10', '10');"><img src="themes/Sugar5/images/rightarrow_big.gif?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1" width="16" height="16" border="0" style="margin-left: 1px;" alt="" /></a></td>
+                <td id="hidden_ids_td" align="center">
+                <select id="hidden_ids" name="hidden_ids[]" size="10" multiple="multiple" style="width: 150px;"><option value="1"></option><option value="c17acb76-adb8-6c62-25f7-5518c8f38375">Abeer Fadl</option><option value="63b13a27-826b-f411-0148-55ee33fe2843">Active Editor</option><option value="2718cf75-838a-9951-739a-4ee025c4a9c9">Adam Brotchie</option><option value="b5c97312-e7c8-6d11-1f13-55516cf610f4">Adam Geib - Freelance</option><option value="1ffa2b51-76fb-851b-279b-50402fccc410">Adam Geib - Inhouse_delete</option><option value="49fc89d1-4c25-c2ab-6ac8-53db7715de0f">Adam Goulston</option><option value="9696dfa7-9db3-73ed-c6ba-4f14c38a7d9e">Adam Phillips</option><option value="b4a80daa-9ed6-e778-fd98-4bd511f7887b">Aidan Young</option><option value="ea47db48-598f-9fb6-ae67-5098e24756d4">Akiko Kawamoto</option><option value="ee247a26-ff3c-d86b-84f3-5098e3bba221">Akiko Kawamoto - Edanz Group</option><option value="c9401248-5f03-f453-58d6-5420e6f60920">Alan Biggs</option><option value="20160784-d24a-89c1-7ccf-4eb9cfc8b5be">Alan Burns</option><option value="75076f69-69d2-8d21-4eaa-4655379d259d">Alan Hodgson</option><option value="de4c3c01-8396-2f4e-0894-53db7690977e">Alan Purvis</option><option value="9a061b0f-dfd5-74f2-f9d8-5524f79b5211">Alex Boon</option><option value="6ab76299-4d03-dc31-b468-5215ab4a445d">Alex De Visscher</option><option value="68d54d55-5a96-f7ef-9faa-530affa136a5">Alex Morris</option><option value="c6c25713-0aee-4686-61e3-5513cd1f8b6b">Ali Gholamrezanezhad</option><option value="99c80332-90d3-adf0-0dda-5510bdc40ceb">Alison Lees</option><option value="72e2fb78-aacc-af1d-8c2b-528171f6dcd8">Alison McGonagle</option><option value="8dc9bd95-e5d9-9c86-2a9d-46553314c3ac">Alison Sherwin</option><option value="916a1052-d0f7-4bc6-cd33-4db684e210d4">Alissa Nana</option><option value="ac12318a-3ba0-bcd8-8200-540eb8844e56">Alistair Reid</option><option value="1ea7b545-1637-d29d-653b-54d0260381a7">Allison Alley</option><option value="e96ce18f-7bc6-23da-01b5-534e11950a4f">Amber Shaffer</option><option value="6844ae49-035f-0601-95c0-55360f0bf1b4">Amy Van Deusen</option><option value="973e7645-ab87-8a12-b6fd-5164c04ef5dd">An Thien Ngo</option><option value="5e03de30-c280-0f17-7d12-53e0868b15e9">Analisa Avila</option><option value="6cae8b7a-02b2-4b3a-27f7-485b1699fc96">Andrew Dingley</option><option value="bf82f87c-5416-e154-f4ce-49e3e9962def">Andrew Gorman</option><option value="af51ed4b-50a2-d3ee-bc41-50c165280db4">Andrew Jackson</option><option value="e8c499b1-57c6-8fd9-dcdb-4df1b1d351ab">Andrew Stow</option><option value="77b7ba54-dc56-a52b-9edf-4eafb897291d">Andrew Stow - Freelance</option><option value="ce6b0cbb-82d0-a1f9-0326-4b960ab7310c">Angela Morben</option><option value="3e00036f-24be-a8c6-0abf-52df1e0cc7dc">Angie Smaranda</option><option value="6bb9021e-b208-c88c-b687-5541db76c037">Anita Harman</option><option value="16c61221-22f0-ec85-63b3-55714ede5349">Ankita Bansal</option><option value="366ccaa8-b73d-b64a-e940-522e99b109f7">Ann Seward</option><option value="e0fc1364-ee57-42c5-1c8e-55e00bbdb76d">Another Editor</option><option value="bbbb0765-4090-834e-184d-534f3b78254d">April Gutierrez</option><option value="10da17cc-6e9a-d145-30d3-47d9f7291003">Arshad Makhdum</option><option value="428b418b-88f9-58a7-c43f-53d1bf5d6492">Ashleigh Fox</option><option value="4a8f82e5-ae17-7be7-4226-514826211711">Ashley Craig</option><option value="ae238db7-dbaf-9d32-3f2c-4663ab54d79f">Atsuko Takanabe</option><option value="544feb66-58e1-73da-43db-4d93d3a70742">Atsumi Suenaga</option><option value="b093ca9d-dab1-db0d-2642-4e51ab6f963c">Atsumi Suenaga - Edanz Group Ltd.</option><option value="c7f26638-5b93-907f-dcd5-52ae79c7cc57">Audrey Holmes</option><option value="4e7b9e31-6436-9aeb-6e08-4f34805b2e25">Austin Schultz</option><option value="8d67679a-c6cd-c935-ac70-5245383b0322">Aya Irikita</option><option value="6089e60d-410c-5115-202f-52453a27cd80">Aya Irikita - Edanz Group Ltd.</option><option value="38b3c47c-1b8b-04ea-9297-5163c7da2805">Ayli Chong</option><option value="3e7f4af6-d91f-8723-8ef0-4ecee23c2dda">Barbara Goodson</option><option value="8a155fea-5abe-fd87-736f-4d8666150f4e">Barry Patel</option><option value="a41ffbb6-2204-7fd8-377d-5332622d64db">Ben Greshon</option><option value="34c34934-198f-3fce-b776-48119cde6137">Benjamin Shaw</option><option value="a06043ce-17a3-9074-0e91-53844cc7836c">Bettina Gnagi</option><option value="39c04a58-c783-5899-499d-54363bf2a9cd">Bin Wu</option><option value="1bb562a5-dc3e-8dea-8247-52cca50ba384">Bonnie Lynch</option><option value="9c14cf7d-3c34-e26d-a757-46553571ee2b">Brendan O&#039;Sullivan</option><option value="4cf0499b-bba2-79e4-5fa2-4d9d2994595f">Brielle Rosa</option><option value="78a5a88c-28bd-7151-f2b0-50b2d2b0490a">Bruce Cummings</option><option value="43a16649-6051-89b2-cb1b-4ed58fed7027">Cameron McLeod</option><option value="49950043-e4d3-9dda-e76d-50caa7bbb308">Carl Jackson</option><option value="ad81518a-df0e-d47b-3d89-4f0e4de2b05a">Carla Avolio</option><option value="c306ef14-3f64-2bda-e4ba-538e77e58e3b">Carol Wilson</option><option value="49370296-efce-1894-af9a-465534be32dc">Cathel Kerr</option><option value="e7583de0-4106-bfae-4c58-4e8ad05bd343">Catherine Dandie</option><option value="e4fb1d51-eaa2-9a0e-de02-4f795725c5ad">Catherine Moir</option><option value="d1dce9ed-93a4-4e5a-f05f-4efc165f87f7">Chaofeng Lin</option><option value="e2df6a51-3eae-a035-4581-5534c131f609">Charlotte Robin</option><option value="64566658-7768-7444-a1f8-5282eb64be25">Chiaki Yoshida</option><option value="9e7d31b9-4556-2335-fa05-5282ebf50e24">Chiaki Yoshida - Edanz Group</option><option value="60c4c00c-10c8-b3e7-0532-5056afd2939e">Chonglin Yuan</option><option value="db472528-ca79-5595-20c9-4670ea538cd7">Christi Cooper-Kuhn</option><option value="8018348e-9a81-91f2-9a5d-4b9dbafc272b">Christopher Norman</option><option value="ef3b5c84-fe03-78b3-ca6f-4bc6f109844f">Christopher Norman - Freelance</option><option value="d6eee9ed-7216-1c35-e9aa-5372fcd8bf56">Clara Bah</option><option value="87f70f91-53b3-66c9-7d8e-50ad9553a4b2">Clement Weinberger</option><option value="6ae545a8-7d08-8625-55df-50935cfa3dd0">Colleen Elliott</option><option value="3abd71e8-408c-a8d6-9046-52df1fcce706">Colleen Elso</option><option value="481d07c9-18bd-6348-684e-49533246460a">Conan Fee</option><option value="1536ff44-9b02-f2bd-562d-5302b4ff5f5a">Corina Marx</option><option value="41e7d0c1-716c-48f2-df6d-520318dc9758">Craig Nicholls</option><option value="294fd8c2-1733-8111-5602-4fd158b63d00">Crystal Cheng</option><option value="d95f525f-25d6-c129-16a6-4e8c1db91e2b">Dalia Lahav-Jones</option><option value="462685fb-2e90-8795-1556-46553458de6b">Daniel McGowan</option><option value="a20de8d2-caae-4a91-de77-4f32654d2a81">Daniel Wheeler</option><option value="eb55c8a8-afdb-54a0-e8e8-502e12360adf">David Frishman</option><option value="8496740a-8e79-17e8-b7fe-484cb30ebfd8">David MacDonald</option><option value="e2521d96-f16a-5525-b514-558101d039dd">David Menzer</option><option value="b7c6241e-73d3-61c6-3bf6-54b5bed07bc5">David Nordstrom</option><option value="753c5490-82a3-b1bc-030d-4f29fc528088">David Smallbones</option><option value="66176319-0d60-ad1d-5c07-5588c8218b65">Dean Meyer</option><option value="65f16c37-d20b-1a02-42f8-4ffa33ca52da">Dean Ravenscroft</option><option value="11340a03-b575-39d2-4570-50cae9fc1454">Deborah Ballantine</option><option value="4d118a93-6fba-39d3-a695-508a58da6191">Denise Di Salvo</option><option value="1819464b-ef07-98e7-d6a2-54194f1741bb">Diane Williams</option><option value="26d33689-faf2-ac4d-e171-50f5fd625308">Diedre Ribbens</option><option value="d4bcf137-2bc2-79ef-336c-4e8ad9e562a6">Dolores Takemoto</option><option value="d6f55267-2d62-551b-6b2b-4ee01f4e6bfc">Dominic James</option><option value="cfa3568c-6de2-2a78-42e4-4eb1145cfea4">Donald Hendry</option><option value="64e2483a-a6ec-26f2-6684-555ac9375349">Donna Cawthorn</option><option value="b812193d-2a7d-6feb-09d3-52688e44e368">Donna Herring</option><option value="ad377b48-fa07-9b39-30dc-52ba7c2fadfc">Du Xiaoyu</option><option value="2c5a8829-f54f-a80d-55b4-4d93d20c7b21">Eiko  Natsuwaki</option><option value="2bb0ffa5-6d2d-8e7d-b660-4e3f306c641b">Eiko Natsuwaki - Edanz Group Ltd.</option><option value="7cea8ddb-633d-a177-d408-4da285b47c29">Elaine Monaghan</option><option value="f0c907a2-6c82-1ed3-3630-539f9770dfc3">Elisabeth Hudson</option><option value="ae784714-2d86-f0f1-6cfa-4ba2fb003ca3">Elizabeth Dawes</option><option value="ebac40a4-1e72-edfd-915a-4eaa6b7285e7">Elizabeth Finnie</option><option value="d63b4cf4-8f57-64c5-efab-4f7e962d05bc">Elizabeth Kelly</option><option value="7b6f881e-f5e1-fb41-90a5-4655346b7901">Ellen Knapp</option><option value="b06f53fc-9504-1b8e-3838-553f3cc146d9">Ellen Shuman</option><option value="b053b883-a339-6764-104c-4e30c29ee7db">Emi Maeda</option><option value="152ef048-846c-1c5f-e976-4eb8e73664a5">Emi Maeda - Edanz Group Ltd.</option><option value="7772cc77-2726-dc36-8a30-4e3b5b5e56d4">Emily Bass</option><option value="30a9fbdc-cab9-fb5c-bc84-518c4f5bec56">Emily Truckenbrod</option><option value="497c0254-35ee-b051-81ac-5594f6a00af4">Eoin O&#039;Driscoll</option><option value="e0ca2526-dc6e-a109-cfae-55b58847cfa8">Eri Kinoshita</option><option value="eaf6477a-6bd3-874d-6589-520d9e8901a0">Eric Veien</option><option value="50b6289e-4528-3a7b-5984-55472d6c3c35">Erin Boutwell</option><option value="9c1b4e13-0502-b678-cdb3-54b7146c413b">Fern Beavis</option><option value="a01b5466-0c8e-ff34-df9d-5282ec768554">Frank Kitching</option><option value="505fbc1b-e970-dab2-6f6e-534f416f998a">Fu Qunqun</option><option value="daa452ee-8df7-828c-8d23-49598bc6dd50">Gabrielle David</option><option value="1ce45ab3-7395-26af-5688-50f5ff069546">Gabrielle White Wolf</option><option value="69f707fb-7605-d5b8-51fb-5571322fc2c6">Gaëtan Borgonie</option><option value="185e268c-b04a-4241-bb70-4f9a2104c7f8">Gareth Thomas</option><option value="3198c3f0-7314-a10c-5ec2-4bbacfe52e36">Gautam Bijur</option><option value="2c885614-9a8c-6fbe-c895-53fd9c471430">Gemma Sutton</option><option value="5029eb41-5607-7c6e-8c7c-4de5c9450d8e">Geoff Brehaut</option><option value="e5de3bf1-1b7a-b1c1-b2a5-5372fbe1da87">Geoff Whyte</option><option value="873df57b-a409-f91b-bcbb-4a3713a15559">Gerard Morris</option><option value="a81d0376-c90f-33df-0a19-50efd34df004">Gillian Campbell</option><option value="18abe24a-0442-d605-d3a4-53f6de8ac677">Giselle Walker</option><option value="d4e58a30-135c-5bd6-6acf-4655377d7d06">Glenn Pennycook</option><option value="f1c11d85-2875-be41-7300-51c3ce08e803">Greg Hajek</option><option value="66be3f83-7864-6790-01f6-4754f712e909">Gregor Stewart</option><option value="5509eca6-c37c-1e0d-f901-495991992fda">Gregory Betzel</option><option value="da343f42-0287-edd0-d4ea-553f3d3269c1">Guy Bennett-Hunter</option><option value="5ab181b2-1efa-833c-625c-54ab8dde6935">Hao Yu</option><option value="7c761bfb-c6a6-9e27-63e2-4959888d0e44">Harry Taylor</option><option value="316a19f8-52e9-8775-881b-5316f9861676">Helen Jeays</option><option value="904663f1-1e7a-54b1-c994-4a80d8bb1c6c">Helen McPherson</option><option value="bcfd0f9d-df43-ad71-b535-51b92631441f">Helen Roberton</option><option value="561ea058-de9c-03ec-3dce-554700ea7f82">Henry Larkin</option><option value="e022fa27-ee5b-117b-7fa5-4cfdca389fc3">Hillary Noyes</option><option value="3822fbc0-6936-b644-1df5-5587e3102982">Hiromi Imoto</option><option value="cfc3a7ce-ddbd-7ac4-24d0-5587ed02e1d6">Hiromi Imoto - Edanz Group Ltd.</option><option value="167df70e-48df-b0c7-7693-50ebd5dcd9f3">Hongjun Fu </option><option value="7eae5e13-13ca-7f69-f6e6-5434ad5c501c">Huang Xueshuang</option><option value="5211b1ef-dfda-43a8-8066-4ec33557a810">Hugh McGonigle</option><option value="a9c9a66e-7a5c-7959-a803-49a4ba45c223">Hui Hui Yu</option><option value="a0a7260b-7277-0270-dd7a-4ed58b39c443">Iain Mackie</option><option value="2b9d2bc3-1989-4ffa-6595-53bf907a3393">Irina Entin</option><option value="cfc33e9e-ee53-b0a8-b0fd-53b60600e690">Isabel Duarte</option><option value="67f4717c-8c3f-09e0-ee96-53bcf239a335">James Allen</option><option value="f27fd37a-46ad-f93c-b39c-4f14010c681c">James Buxton</option><option value="c03a4564-8671-4f85-dccb-4e8ac90d1d4b">James Hitchin</option><option value="93d1c1be-d051-2131-3815-50caed238ca0">James Monypenny</option><option value="967a09e4-a349-36a3-f65a-4d945abd2c1b">Jane Charbonneau</option><option value="ed5e6d4b-b0c8-a7a3-6ec5-50efd8b84732">Jane McLeod</option><option value="c1c2c9c8-01ef-d792-554e-4bec0ec60eab">Jane Mijovic-Kondejewski</option><option value="2a63dfef-be35-f24d-d4e9-51661c6a6efa">Janine Miller</option><option value="ec4b7471-7f06-0fa9-594e-52ca4c7b3704">Jenah Shaw</option><option value="9a286a00-b470-6476-f532-549cba4142ae">Jennifer Barnes</option><option value="374daaf1-901b-b1b5-2291-523bff7907b8">Jennifer Barrett</option><option value="acda01a0-824b-e7af-aa47-53bb9e821f91">Jennifer Hinners</option><option value="1119d150-b2e8-9187-0066-4655362a0efe">Jennifer Smith</option><option value="33664d0a-7476-e31b-e249-46d39700f527">Jeremy Allen</option><option value="e69cb91d-e170-dfcc-cd11-4a31b24c2a57">Jeremy Hoisak</option><option value="15be1a26-2406-c722-4fc3-47df3a217dbc">Jeremy Kamen</option><option value="591947c0-119c-7e6a-6a91-49598d44c630">Jim Cummins</option><option value="831d2e7f-48bd-dbac-baef-4fec309f76a0">Jodi Smith</option><option value="695d606c-58b4-7212-2923-4d951c540eda">Joel Anderson</option><option value="45170d55-e70d-245d-707c-53329e2ada91">Joelle Sambuc Bloise</option><option value="b00004e7-30cd-e9a7-8ff7-53bd053e581f">John Frampton</option><option value="4bd009b2-34d7-9ca8-2d55-53eda184677d">John Frampton-Freelance</option><option value="bbad04cf-f594-96dd-3e1b-547bcd1fd4fa">John Gibbins</option><option value="ef0870f6-196a-a303-0747-508a456fc8c3">John Green</option><option value="1d15f0e7-16ff-2c9e-971c-4b176914f167">John Kristiansen</option><option value="f3c762eb-ffaf-1b57-9198-4f838e8ee96e">John Nicholson</option><option value="86861132-d1b4-881b-1159-51fafdd9bf15">Jonathan Muyskens</option><option value="eedce3b8-5e4c-4652-c2dc-53e44b9617e3">Joshua Green</option><option value="8ff9f15a-1311-a386-3dc2-50efcd696df2">Joshua Yearsley</option><option value="2219efdc-b267-8e70-914a-54924f00a208">Juan Bustamante</option><option value="133c0b8f-d4e7-6845-dcf5-4ecf11be6da0">Judy Horsburgh</option><option value="e0697a80-7ae3-3a2c-ed77-4ee008b1a552">Julia Peacocke</option><option value="c3328dab-6a66-2f12-9964-55b589c5ddce">Julia Schumann</option><option value="104601ad-ca5b-9e96-e04a-506921891f6c">Julia Slone-Murphy</option><option value="6d357078-0deb-7c77-67ec-548017195b53">Julian Tang</option><option value="28f438d8-4ad5-32cc-775c-559f742fd3bd">Jun Yamaguchi</option><option value="60d6e29e-dee7-21d8-b6af-542e0a5c2bb3">Junya Inoue</option><option value="2360c31d-a3ce-2abf-0334-465536e774a2">Justin Dean</option><option value="b93101a8-8532-6744-5078-504dff48df5b">Kara Bogus</option><option value="5ba03ae4-623b-d3da-78dc-465536e8afa5">Karen Bradshaw</option><option value="250ae2f2-7f98-967a-47f1-4f30829f0dcf">Karen Bysouth</option><option value="d58406da-d6ae-c67d-89c6-51fa109ff2f7">Karen Tricklebank</option><option value="354f5dc1-4c41-b8ee-cf7b-50caf4321cd3">Karleen Dudeck</option><option value="6f16c98c-beae-6f8d-26cc-4a4afd73f2c1">Kate Fox</option><option value="3a8cb558-7548-4fe2-43bd-548655f5ec94">Kate Harris</option><option value="11699902-803c-9d43-ecdb-532bfa4557dd">Katharine Butler</option><option value="aff2f773-59e3-1882-b923-4ec07881882a">Katharine James</option><option value="44570a9b-4dc3-7e69-2cf8-531014bb82ef">Kathy Sole</option><option value="62b36944-58bf-4746-605f-527735a468ba">Katie Oakley</option><option value="8dffdaf9-816a-b96c-bd8c-465537c71997">Katie Stallard</option><option value="eae50bd7-57a3-423b-e0a9-4ec37c96c2bf">Katie Viljoen</option><option value="bb59a5d0-7034-eb3c-86db-5375689040a1">Keiko Mizoguchi</option><option value="25a365c8-9192-26c5-74d7-537569e08540">Keiko Mizoguchi - Edanz Group Ltd.</option><option value="3fdfd688-444c-ed09-188a-4f163ba6d73e">Kelly Bogh</option><option value="87f8fd1c-df92-45a7-f261-4f176dce0dea">Kelly Bouchonville</option><option value="d1e0dc03-db91-2570-c471-539945c4add2">Kelly Zammit</option><option value="829305ba-63ea-843a-1279-4ee71db933da">Kenneth Tieszen</option><option value="7de8bab3-615e-21bc-c2a5-46553364ba1d">Kerry Greer</option><option value="59b48742-7098-1feb-045e-52f8316fd135">Keyra Martinez Dunn</option><option value="5b8b8644-2379-7019-9f98-504dfa554591">Kimberly Moravec</option><option value="2b9f00ff-a80f-82fa-f166-5301b0ab10fb">Kristen Tandy</option><option value="4895f13d-a4f1-347f-c65a-53912030277f">Kumiko Shimogami</option><option value="9329c115-e536-cc82-b879-53912054e0c2">Kumiko Shimogami - Edanz Group Ltd.</option><option value="838283f0-abbd-10af-0971-51e61092d440">Kyoko Tonomura</option><option value="8de402fa-7672-7ba3-f744-4eb9ce2ed6de">Larry Takemoto</option><option value="712c6a62-8ba6-c14d-2a94-52e8a45a1406">Laura Brooks</option><option value="37da6c98-5102-deac-915a-49b8c5c742e3">Laura DesBrisay</option><option value="23777a8f-1803-cffc-c2a1-465536a4580e">Laura Desbrisay</option><option value="58b522d8-966b-edd4-2d41-4b6135e95d48">Laura Kuhar</option><option value="683d1640-d8c5-cf2e-2af9-4ef2e36fc255">Laura Wicks</option><option value="bd56f38d-0708-5cba-645c-4ecee7cad743">Leanne Kelly</option><option value="8aa75db7-952f-2b4b-ea28-4c364919a246">Leonie Pipe</option><option value="10219dac-1850-3727-1b94-551a3724a321">Leonie Seabrook</option><option value="58af54f1-5205-e8f8-891c-4d50d27cbfaa">Lesley Benyon</option><option value="4171cba2-5577-a2be-56c7-55472c57c473">Leslie McMurtry</option><option value="c49dc05b-39ac-456f-6486-5434ab6c2d15">Li Yunfeng</option><option value="da53d429-bb49-8640-8780-4e688468b011">Liang Li</option><option value="a7220ec1-52be-9188-f509-4d5de2c9debb">Liang Shen</option><option value="4a479d1d-5dec-9c48-445b-50f8bdb7bae2">Libby Cone</option><option value="36cace87-08f4-befc-6bcf-523badd94e0d">Lisa Hodgkinson</option><option value="65514d10-7dbd-d4b8-1b38-52302c18d13e">Liu Zhiping</option><option value="17350951-6fbc-9d55-db46-51945bedbd8c">Lucy Muir</option><option value="2e81766c-fd8e-9b95-1507-4ea13b9bfb23">Ludovic Croxford</option><option value="305b5fbe-63d7-7e91-2865-5063eed2a486">Luis Garcia</option><option value="394a2f1e-9513-8284-fd29-5292a9eaeeb1">Luke Kenyon</option><option value="dde7c4a7-5153-ece5-90d1-5570f52f8b83">Lynley Pound</option><option value="1fedc309-f8b9-85b9-3a27-5397cd03d053">Lynne Etheredge</option><option value="e6ac4657-256a-1f68-76dd-55754433df7b">Lynsey Forsyth</option><option value="88c2bc93-f10e-4fb5-45b0-5423d297d778">Mallory Eckstut</option><option value="4ac71027-9c50-5fbd-16f9-542e0bd28713">Mamiko Kita</option><option value="e019d726-8bbe-4d2c-0828-4b68efacbb26">Margaret Biswas</option><option value="81236817-6a69-531b-fd8c-4f8f71a60896">Marion Barnett</option><option value="b1e7113d-e51a-da71-0459-5153e8539eb4">Mark Abramovitz</option><option value="c03fb84c-a944-274a-649b-50cadff13544">Mark Farso</option><option value="914a1455-f974-ae88-d723-483a41e0d88a">Marla Brunker</option><option value="9ee50cee-49f2-331d-7742-49598913a12f">Martin Wallace</option><option value="5d47a247-6ab2-fd93-7479-47133bdebe4d">Mary Cant</option><option value="c2b53a9c-797c-311c-6797-52eb0d95a953">Mary Derry</option><option value="2164b7fa-69bd-2456-2a2c-5428bbbb5540">Mary Richardson</option><option value="e62b5d54-0b40-0722-b435-5135afc74292">Maryline Chee Kimling</option><option value="55b36547-4b81-dc2d-a733-4b9eed1311fb">Matthew Barnett</option><option value="1fc0b923-47f4-fa81-85f7-49549ac91419">Matthew Polson</option><option value="9f94bfd1-64b6-af5c-1d96-4c4a134a67ac">Matthew Roth</option><option value="527c385b-e932-e104-1536-52f4902bf239">Matthew Zito</option><option value="b7cf7822-5f89-9844-e9f1-558ce5d851af">Maxine Garcia</option><option value="4672a3f4-cf13-b237-c923-54f3afbd7840">Megan North</option><option value="2b6d240d-0752-ea4b-a8b3-5164c56d5ff9">Meghan Stephens</option><option value="5437fc4c-5da5-776f-d6ed-5121b4aea7e7">Meihua Li</option><option value="a0413dd4-5b8b-aec0-4755-50f5fba53b57">Melanie Mercer</option><option value="c929a431-1c0f-f9ca-5590-51945d7ceec0">Melissa Leffler</option><option value="169fe227-8e13-611a-deb7-4ffa2ca930a0">Melony Black</option><option value="69bc9d98-e7d7-9f6f-27ba-527348cd36e0">Michael Barnes</option><option value="6b0ab652-60bb-7b84-257e-4f95024c8952">Michael Dark</option><option value="25851e0d-37cd-d704-7d63-495994b5e357">Michael Dewe</option><option value="97f33153-344d-7734-f2e7-4db0c0e5820a">Michael Judge</option><option value="f21cd855-2179-02ae-6cc5-4f0fef0111f9">Michael Pack</option><option value="63999005-7f76-bbd5-254c-52d4ebf046bf">Michael Salk</option><option value="3ed12576-b961-3249-d9d9-4c2b6c5d3a5d">Michal Bell</option><option value="c73aa0f5-69cc-7cd5-de8f-5424ad4147a6">Michelle Belanger</option><option value="969bcc42-19a1-29d5-8802-52031db82287">Michelle Pascoe</option><option value="2b468c88-46d7-b5c7-781c-4f420b54c450">Mina Hirai</option><option value="d1b804b0-b32a-658b-b387-4f420f75d99c">Mina Hirai - Edanz Group Ltd.</option><option value="3289c628-1378-03f7-7c1d-4f420be0f43a">Mio Fujiki</option><option value="73f60d8b-e567-1122-c871-4f420d7ad39a">Mio Fujiki - Edanz Group Ltd.</option><option value="41811d28-cab7-7984-8d4f-4d52e3218d46">Mitchell Arico</option><option value="f163c7fc-3edc-6d9e-509f-4d0112b90c80">Nancy Schatken</option><option value="7406f92d-0540-b406-cb29-4ed3286aaa87">Naomi Yonekura</option><option value="f198db8a-7780-87c5-4689-4ed32bd27002">Naomi Yonekura - Edanz Group</option><option value="888b441c-296f-3050-a449-502e09489383">Natasha Beeton-Kempen</option><option value="3def6198-0bf5-7cab-9485-49e53e8bfbfa">Natasha Lundin</option><option value="a82f4497-f80d-6602-bcd5-51ba6fa60feb">Natasha Shelby</option><option value="4c7f0bfc-be0c-abd6-5ec6-559a8f344f13">Nattapat Lertprapotekul</option><option value="46f38f0d-325e-ec18-59ce-559a909fda8f">Nattapat Lertprapotekul - Edanz Group</option><option value="6038737a-8abe-9540-893d-55151f0d4bcb">Nial Wheate</option><option value="65dbee6d-fec8-f8af-f14b-46553564500d">Nicholas Smith</option><option value="50dfc919-f59e-29a0-7022-4f32631194e5">Nicole Jones</option><option value="d1663705-0321-46c5-ae15-4d8a5ac415f5">Nikki March</option><option value="9cee022b-2c55-5d70-99f6-52955bb1be80">Novak Elliott</option><option value="8895bec1-3f82-9889-19cc-55e00b81771a">Onemore Editor</option><option value="6e080010-5999-6fdb-4614-517f219bcb23">Pan Gao</option><option value="7e9b7d66-527f-4fd8-3f3d-5282ec5bf249">Patrick Logan</option><option value="f36d98a6-d339-f20d-7465-51dd30e76dc3">Peter Fogarty</option><option value="f1ff73d6-2e56-69f0-296c-495993706a23">Peter Humphries</option><option value="4f53c175-bfcb-261f-3871-50caa4e1738f">Philip Creed</option><option value="7bbfa37d-b3f4-29ad-e190-4ba8c59a60c9">Philip Hyatt</option><option value="71cc320d-1774-9f34-9906-549393575508">Philip Martin</option><option value="45a40dc0-60c4-35cc-0aed-53bf9095e46a">Phillip Shelton</option><option value="c315ebe8-871f-c514-b125-5212d1f0b4d6">Praveen Paul</option><option value="d508b903-38d5-e79b-12c2-48043f4782a5">Qi Ying</option><option value="8b6c97ff-8e26-9812-2883-53f445a27f34">Qianqiao Tang</option><option value="26bb18e3-cc83-c367-9545-4da6503c8bd6">R2 Connector</option><option value="d6e82f8b-664b-ced7-a562-48043e4bcaf0">Rachael Lee</option><option value="5b2a2614-78fd-70fd-b73f-537b0aebb32b">Rachel Clausing</option><option value="12579986-80f6-eb7a-69c6-4da8070effdf">Rachel James</option><option value="e77c7fd4-4688-c0dc-c17f-51d0f511b113">Radhika Johari</option><option value="ad34083b-b6b7-f212-28c5-53aa922eb41d">Raewyn Poole</option><option value="3deba3f1-1bdc-3f3a-737d-5135ac1d7b31">Randal Moldrich</option><option value="cfd5319d-2633-1f7c-1093-48b76176a59f">Rebecca Devon</option><option value="670db56f-45ad-744d-a189-4f73d886429e">Rebecca Mant</option><option value="cf262232-9bb6-f547-29ad-4e8562bf262b">Rebecca Maxwell</option><option value="80918722-78f7-eced-f98a-4f2905c73737">Rebecca Maxwell - Freelance</option><option value="93278b8d-3c1d-160d-7000-4d1b6f602507">Rebecca Stewart</option><option value="5b8be610-bfe1-6ef7-2dc9-4f3e4c7aae3e">Rebecca Tollefson</option><option value="1128025d-3386-1310-f080-5321747d7bb4">Rebecca Warren</option><option value="4b6cbdb6-4b18-5338-a407-50b309cc72f1">Reetta Saikku</option><option value="3ae1994a-7d36-97b1-024e-54094255ceac">Regina Fulkerson</option><option value="8aaa6e29-081e-8f43-cfb3-53158c049fb8">Ren Hui</option><option value="1909241b-f13a-6cd6-2699-47143107fab0">Renee Mosi</option><option value="4997f36f-10c3-b2f6-ea17-52d504016f9c">Rhianna Goozee</option><option value="1c0909cc-5db9-b7cf-5bd7-4f0a37aab1fe">Richard Alexander</option><option value="978ad1b1-2f00-b4a6-9a2b-488ed95e0b81">Richard Haase</option><option value="6401facf-5a16-e6ed-38d9-4655362ce96c">Richard Parris</option><option value="ef61e752-07b6-b7ba-0b71-53ed6212329d">Richard Rison</option><option value="c967f249-2cf4-0071-be80-4f29ff9c34e2">Robbie Lewis</option><option value="89598cab-6872-370d-880f-4e8acfaec1cc">Robert Barrett</option><option value="7a366965-35fd-579a-a000-4f6a752d31b4">Robert Blakytny</option><option value="befbdd6c-a07f-e6b8-c2d3-53f6cc5beac4">Robert Borthwick</option><option value="8a900f8c-cfae-1470-71f2-53db76323d23">Robert Conti</option><option value="df0c289f-1e0b-8c3a-08c7-54d053e46514">Robert Hodgkins</option><option value="cf83da9e-f4ad-3d5f-8dc3-4655360c89d4">Robert McKenzie</option><option value="217229e2-4d27-ba61-07f8-554acc0682bb">Robert Sloan</option><option value="8160b008-2e27-1614-ee1c-55b58a323c3f">Ruth Tunn</option><option value="82b2d0f7-1867-42fa-ecc2-497d359e38cc">Sabin Colton</option><option value="c34fc6ed-807b-852b-b4a2-5570fb36f129">Saiyad Ahmad</option><option value="f17dfbb1-da3a-3e27-355b-5007e14640f8">Sally Evans-Darby</option><option value="290cb69a-e03c-c81e-9689-555c186d90bc">Sam Kinred</option><option value="87dbba33-d177-735e-df6e-4c49fe472d5f">Sandra Cheesman</option><option value="bd892d1c-0a9b-c66c-74a5-4d9d2b547b88">Sandra Doherty</option><option value="60c37f65-ca7d-4791-66b0-51b53b95e869">Sandra Ponen</option><option value="1695044a-e8e1-dc63-7d61-502df94ea47b">Sara Becker</option><option value="68fafbb1-b4f0-f0ec-58b6-50e630d9d719">Sara Maccagnano-Zacher</option><option value="c65304f7-f55f-4252-be45-50efd5a77ff3">Sarah Dunstall</option><option value="c424064d-4efb-457b-fad8-502dfdf91395">Sarah MacPherson</option><option value="f2d0ea65-0c3c-7183-fe12-50174da9941f">Sarah Tynan</option><option value="d26b1e2b-d36e-6fb1-fc95-4f161ac3ffda">Sarah Williams</option><option value="3f32b179-ea19-48a5-9e0b-4ad552055575">Satoko Muta</option><option value="8dd18194-0725-bbcd-eadf-4e7fcc32621a">Satoko Muta - Edanz Group Ltd.</option><option value="1f1dc1c8-e15e-7ede-e529-510f9476b30d">Satomi Eguchi</option><option value="c96f2dbd-0517-f031-7594-510f96ba6caf">Satomi Eguchi - Edanz Group Ltd.</option><option value="bd79b32b-e61d-0f21-897b-52f1edd5a89e">Scott Lloyd</option><option value="9552a317-6175-0809-9e4a-4823ac35b49d">Scott Wysong</option><option value="62f1a4fc-f17b-b7a6-ac4f-4938c3fc5a01">Scott Wysong - Freelance</option><option value="511991a1-52bf-447e-a509-4fc2f4ed6456">Sealence Shao</option><option value="35970f64-bd1c-3d7d-c728-4fc86d2ba86e">Seamus Harris</option><option value="660c421f-039d-b679-0c12-4a1f3a9d5568">Sean Devenish</option><option value="514cfc62-584f-96e7-6cab-54533b305d12">Sean Mathai</option><option value="cef0744f-99b2-4841-6345-559a8a5c1e77">Seri Nogami</option><option value="1e34a834-1c6e-0192-3396-559a8c993075">Seri Nogami - Edanz Group Ltd.</option><option value="79849be5-32ac-88a6-b7fa-4e97e51ae6ca">Seth Roberts</option><option value="78d70356-e599-fef0-16c5-4ab84e83a1f4">Shanti Diwakarla</option><option value="f37b270e-b845-428f-3c36-473803fcf104">Shaun Clements</option><option value="89ba47a4-1ba6-b75d-e22d-4fed250ef86c">Shelly  Lachish</option><option value="86fe4074-2e35-327c-8a0f-5146d0da7de9">Sheree Bartlett</option><option value="8ad94837-9c4e-554d-7b06-55b58d6c4bdf">Shigemi Sahara</option><option value="4c364508-e3fb-f4b9-f152-540d274de977">Shuichi Tsuda</option><option value="1de6c7bb-8760-af7c-ad4e-5358c2739467">Sidney Moore</option><option value="efbc2bdc-1de6-0215-1a1c-524cd6d08942">Simon Teteris</option><option value="b032a8a5-1e48-b269-eb27-4eae2ba0fdc5">Sirion Robertson</option><option value="c62bf86d-8df4-66d8-cf67-4f2646971141">Sofia Elouali</option><option value="44398c02-7308-49f8-1a8b-4f5e931b2b0a">Sol Richardson</option><option value="d8680526-2220-f217-0fae-4be82b6d8dcc">Stacey Tobin</option><option value="9f3675b0-04be-a1f8-96d2-5552d8e48d50">Stephanie Win</option><option value="7e180124-0557-d8bc-a1b5-4c23a63e5c87">Stephen Forster</option><option value="8b7bc3fd-cf94-72a7-f57e-547530c64426">Stephen Laverick</option><option value="1026880a-668f-18c6-0d17-530d5c79bfd8">Steve O&#039;Shea</option><option value="707d01e7-032f-52ac-1d6c-4bfaa8526570">Steven Bradshaw</option><option value="bf870260-c28f-9bfc-1a52-4d7f6f71c53a">Steven Hunter</option><option value="891732fb-5ab7-5900-d450-520c2debce17">Steven Thompson</option><option value="95e79f8b-7ed3-f077-9534-4f2f2137a6ec">Steven Tronick</option><option value="3e8702c8-f087-f994-d0c7-4ca12bd3a471">Stewart Dods</option><option value="bc1c3cf1-9399-fe99-2624-4fb219f00d80">Stuart Jenkinson</option><option value="6dccfcdc-ff40-59d7-4202-550b8d90804f">Susan Doctrow</option><option value="1f3feb5c-c055-2606-9de2-4754f851b4da">Susan Furness</option><option value="b2fcc4b5-64d8-1411-7879-4bbaccbb4e31">Susan Schade-Bijur</option><option value="eedb5d1d-eb6f-d3ab-1bff-4d2cfce108ec">Sydney Koke</option><option value="916cd44b-448e-4fef-9094-4958972d76a2">Tammy Korndoerfer</option><option value="eb43b8f2-ad6b-0cc1-47f8-4d90d5408ba5">Tamsin Sheen</option><option value="847d07f5-cb2f-2b40-218f-55e7ba684fe2">Test5 Test6</option><option value="cc414213-36f0-e1da-4bd8-55e7baf8dbc3">Test7 Test8</option><option value="9ef3cd87-44ef-35c9-0018-560cf622e22b">testo testerooski</option><option value="c68ce51d-fb59-6aab-4a42-4bbac938d5d2">Thomas Laage</option><option value="6636683b-2398-c335-f8f7-540019a99029">Thressa Smith</option><option value="83087ae9-a6e0-1f69-1ecc-4da40d955107">Tim Cooper</option><option value="2310f16e-7d90-7055-aeb5-4a15092e085a">Tom da Costa</option><option value="5d5a0557-5e2b-5b3d-8ba7-55e00a32ae4e">Tom Wilson</option><option value="6e4c0afa-5950-2d30-9265-495497e2729c">Toni Atkinson</option><option value="10a20c49-9524-871d-b255-4dabcc643c97">Travis Ancelet</option><option value="bed8a759-82f8-5344-8ab0-552727e54c93">Trevor Lane</option><option value="ae16011a-6028-420e-8c96-4d3e0a3ddaa0">Trish Reynolds</option><option value="641bb647-7161-9d7a-483d-527adad7a791">Trudi Semeniuk</option><option value="3d6f5ed4-8ed5-a31e-62c7-50ea26b7fa5b">Tyler Calway</option><option value="37d02313-851e-7876-3bf2-53167777fbbc">Undurti Das</option><option value="37248a99-02d3-475a-211e-54924ca3e01f">Vandana Gulati</option><option value="de760dfe-e508-a32d-2c2f-550b8afa0466">Vernon Twede</option><option value="69e18142-943f-96c6-2bea-53200bb6d632">Victoria Grace</option><option value="c31c03c2-50e6-225b-5fc7-50f8bf79d625">Victoria Muir</option><option value="b1dd75bb-261c-c90d-c7e4-552f40fd9df1">Wang Yue</option><option value="19913a7f-6b6c-b515-0606-4ec07a396e6b">Warwick Hastie</option><option value="9ec956f0-5db9-79f7-4fbf-5034b58ecae6">Webform Connector</option><option value="e93f5c2f-1754-479b-27a5-52086950b0b7">Wei Liang</option><option value="935715c5-cdd8-2a4a-747b-501f66c5aa69">Weihong Wu</option><option value="e726a75b-9502-ffad-5c37-52e716aec448">Wendy Brooks</option><option value="be078830-52dd-ae9a-17fb-51348c24fad7">Wendy Ran</option><option value="1864a07c-433d-5807-cff9-4e9e9634523c">William Alexander</option><option value="d6754099-ce37-3236-ae86-520da82b2447">William King</option><option value="60da07f7-f7e4-9a89-65b8-4ffa2f8c54ec">William McCarty</option><option value="85418123-e89c-af3b-43b3-4ca6b17b3eca">William Saunders</option><option value="be951e98-4ae2-847e-7f91-4ee19d1ed1c2">William Yajima</option><option value="79e8169d-d6cd-7fd7-ee27-534f4989d380">Yan Yan</option><option value="be658edc-7d71-252a-8f95-4d6356c7b00e">Yara Masri</option><option value="da4b0f19-c19e-adc0-f9e6-4e5342e3e954">Ye Xing</option><option value="e46d31da-650a-fcfe-00de-4f2a57cb968b">Yingjie Liu</option><option value="2104b345-a87e-3d41-1176-4fb1e83fb4b8">Yu Lin Huang</option><option value="19f55185-f2d7-5f7c-cbe4-4da7fe3e297c">Yue Lin</option><option value="d7632f2e-573e-2f5e-c58f-4bd4f2045b95">Yukari Taki</option><option value="378d0b87-00dc-5853-f9b4-5170cb992c20">Zang Hongwen11</option><option value="7acb14b5-6e15-530b-268d-527a1a2d6e1d">Zhang Cuicui</option><option value="162d5c4a-461b-e3ea-6179-534387bd8dc1">Zhang Donghong</option><option value="14b0345d-f1a9-fdcb-46ec-516fadb53669">Zhang Guangtong</option><option value="7928bfca-ce2c-8151-c85e-55546707aab5">Zhang Honghong</option><option value="e88543d0-ac60-2285-a598-551d04a7b381">Zoran Dinev</option></select></td><td valign="top" style="padding-right: 2px; padding-left: 2px;" align="center"><script>var object_refs = new Object();object_refs['hidden_ids'] = document.getElementById('hidden_ids');</script><script>
+                object_refs['shared_ids'] = document.getElementById('shared_ids');
+                </script></tr>
+            </table>
+</td>
+</tr>
+<tr>
+	<td align="left" colspan="2"><input class="button" type="button"
+		onclick="set_chooser(); this.form.submit();"
+		title="Select [Alt+T]"
+		accessKey="T"
+		value="Select" /><input
+		class="button" onClick="javascript: toggleDisplay('shared_cal_edit');"
+		type="button"
+		title="Cancel [Alt+X]"
+		accessKey="X"
+		value="Cancel" /></td>
+</tr>
+</table>
+
+<script type="text/javascript" language="Javascript">
+<!--  to hide script contents from old browsers
+
+function set_chooser()
+{
+
+
+
+var shared_ids_def = '';
+
+var display_td = document.getElementById('shared_ids_td');
+
+var display_ref = display_td.getElementsByTagName('select')[0];
+
+for(i=0; i < display_ref.options.length ;i++)
+{
+//         shared_ids_def += "shared_ids[]="+display_ref.options[i].value+"&";
+        display_ref.options[i].selected = "1";
+}
+
+//document.shared_cal.shared_ids_def.value = shared_ids_def;
+
+}
+// end hiding contents from old browsers  -->
+</script>
+
+</form>
+
+</div>
+</p>
+<a id='001'></a>
+<table id="daily_cal_table_outside" width="100%" border="0"
+	cellpadding="0" cellspacing="0" class="monthBox">
+	<tr>
+		<td>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0"
+				class="monthHeader">
+				<tr>
+					<td width="1%" nowrap>
+<a
+	href="index.php?action=index&module=edanz_Schedule&view=shared&&hour=0&day=6&month=12&year=2015"><img src="themes/Sugar5/images/calendar_previous.gif?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1" width="6" height="10" alt="Previous" align="absmiddle" border="0" />&nbsp;&nbsp;Previous</a>
+
+		  </td>
+					<td width=" 98 % " align=center scope='row'>
+						<h3>
+ 13 December 2015 -  25 December 2015</h3>
+					</td>
+					<td align="right" width="1%" nowrap><a
+	href="index.php?action=index&module=edanz_Schedule&view=shared&&hour=0&day=20&month=12&year=2015">Next&nbsp;<img src="themes/Sugar5/images/calendar_next.gif?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1" width="6" height="10" alt="Next" align="absmiddle" border="0" /></a>
+ </td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<table cellspacing="0" cellpadding="0" class="monthBox">
+<tr><td class="monthCalBody" nowrap="nowrap" ><h5 class="calSharedUser" style="display:inline;font-size:15px"><a style="color:"  href = "index.php?module=edanz_Editor&action=DetailView&record=c85001db-0643-bd44-3fd3-52b8dcc99739"><font color=>Sam Pickard</font></a></td><td class="monthCalBody"> 
+ 
+<span onmouseover="return overlib('<table cellspacing=0 cellpadding=0 border=0 ><tr><td><strong>Type: </strong>Workload</td></tr><tr><td><strong>Note: </strong><a href=\&#039index.php?module=edanz_ScheduleNotes&action=DetailView&record=64ace60d-d57d-974b-5034-52d4ed7b8f61\&#039 title=\&#039\&#039 target=\&#039_blank\&#039>1 assignment per week<br />max. 20 pages per week</a></td></tr></table><hr>', CAPTION, 'Schedule Notes', DELAY, 200, STICKY, MOUSEOFF, 1000, WIDTH, 310, CLOSETEXT, '<img border=0  style=\'margin-left:2px; margin-right: 2px;\' src=themes/Sugar5/images/close.gif?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1>', CLOSETITLE, 'Click to Close', CLOSECLICK, FGCLASS, 'olFgClass', CGCLASS, 'olCgClass', BGCLASS, 'olBgClass', TEXTFONTCLASS, 'olFontClass', CAPTIONFONTCLASS, 'olCapFontClass', CLOSEFONTCLASS, 'olCloseFontClass');" onmouseout="return nd(1000);" >&nbsp;<img vertical-align='middle' class='info' border='0' src='custom/themes/default/images/ongoing_note.gif?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1'></span></h5><font style="background:none;font-style:italic;font-weight:bolder;">&nbsp;Time:</font>03:37 am</td><td class="monthCalBody" colspan="12"><div style="display:inline-block;border:0px solid #336699;margin-top:3px;"><table><tr><td style="background:none;font-style:italic;font-weight:bolder;">Quality:</td><td width="25" title="All time.">3.09</td><td width="25" title="Last 10 Jobs.">3.2</td>          <td width="25" title="Last 3 Jobs.">3</td>                    </tr></table></div><div style="display:inline-block;border:0px solid #336699;margin-top:3px;"><table><tr><td  width="11%" style="background:none;font-style:italic;font-weight:bolder;">FTE:</td><td width="35" title="Full Time Estimated">13%</td></tr></table></div><div style="display:inline-block;border:0px solid #336699;margin-top:3px;"><table><tr><td style="background:none;font-style:italic;font-weight:bolder;">Fulfillment % for the last 30 days:</td><td width="35" title="Fulfillment % for the last 30 days"><font color="red">0%</font></td></tr></table></div></td></tr><tr id=c85001db-0643-bd44-3fd3-52b8dcc99739editor  class="monthCalBody"><td width=400 style='padding:0;border:1px solid #abc3d7;'><div style="m">
+    <a href="javascript: toggleDisplay('c85001db-0643-bd44-3fd3-52b8dcc99739');" title="Toggle Breakdown"><table cellpadding="1" cellspacing="0" border="0" width="100%" class=""><tbody><tr><td><img src='themes/default/images/create-record.gif'>&nbsp;Task history (with Quality Rating)</td></tr></tbody></table></a></div><div id="c85001db-0643-bd44-3fd3-52b8dcc99739" style="display:none"><table ><tr><th></th><th>Total Tasks</th><th>Quality Rating</th></tr><tr><td>First Edit (Page(s))</td><td>45</td><td>3.09</td></tr><tr><td>Clarification (Page(s))</td><td>13</td><td>0</td></tr><tr><td>Cover Letter Development (Unit(s))</td><td>2</td><td>0</td></tr><tr><td>Journal Selection (Unit(s))</td><td>1</td><td>0</td></tr></table></div><div style="m">
+    <a href="javascript: toggleDisplay('c85001db-0643-bd44-3fd3-52b8dcc99739.1');" title="Toggle Breakdown"><table cellpadding="1" cellspacing="0" border="0" width="100%" class=""><tbody><tr><td><img src='themes/default/images/create-record.gif'>&nbsp;Task history (without Quality Rating) </td></tr></tbody></table></a></div><div id="c85001db-0643-bd44-3fd3-52b8dcc99739.1" style="display:none"><table ><tr><th></th><th>Total Tasks</th></tr><tr><td>Other (Hour(s))</td><td>1</td></tr></table></div></td><td width="7%" style="border:1px solid #ABC3D7;background-color:#DDDDDD;" scope='row' valign="top"><div style='float:left'><font color="#434343">Sun&nbsp;13</font></div></br></span></td><td width="7%" style="border:1px solid #ABC3D7;" scope='row' valign="top"><div style='float:left'><font color="#434343">Mon&nbsp;14</font></div></br></span></td><td width="7%" style="border:1px solid #ABC3D7;" scope='row' valign="top"><div style='float:left'><font color="#434343">Tue&nbsp;15</font></div></br></span></td><td width="7%" style="border:1px solid #ABC3D7;" scope='row' valign="top"><div style='float:left'><strong><font color="#434343">Wed&nbsp;16</strong></font></div></br></span></td><td width="7%" style="border:1px solid #ABC3D7;" scope='row' valign="top"><div style='float:left'><font color="#434343">Thu&nbsp;17</font></div></br></span></td><td width="7%" style="border:1px solid #ABC3D7;border:3px solid #3dc46d;" scope='row' valign="top"><div style='float:left'><font color="#434343">Fri&nbsp;18</font></div></br></span></td><td width="7%" style="border:1px solid #ABC3D7;background-color:#DDDDDD;" scope='row' valign="top"><div style='float:left'><font color="#434343">Sat&nbsp;19</font></div></br></span></td><td width="7%" style="border:1px solid #ABC3D7;background-color:#DDDDDD;" scope='row' valign="top"><div style='float:left'><font color="#434343">Sun&nbsp;20</font></div></br></span></td><td width="7%" style="border:1px solid #ABC3D7;" scope='row' valign="top"><div style='float:left'><font color="#434343">Mon&nbsp;21</font></div></br></span></td><td width="7%" style="border:1px solid #ABC3D7;" scope='row' valign="top"><div style='float:left'><font color="#434343">Tue&nbsp;22</font></div></br></span></td><td width="7%" style="border:1px solid #ABC3D7;" scope='row' valign="top"><div style='float:left'><font color="#434343">Wed&nbsp;23</font></div></br></span></td><td width="7%" style="border:1px solid #ABC3D7;" scope='row' valign="top"><div style='float:left'><font color="#434343">Thu&nbsp;24</font></div></br></span></td><td width="7%" style="border:1px solid #ABC3D7;" scope='row' valign="top"><div style='float:left'><font color="#434343">Fri&nbsp;25</font></div></br></span></td></tr></table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<table width="100%" cellspacing="0" cellpadding="0"
+				class="monthFooter">
+				<tr>
+					<td width="50%"><a
+	href="index.php?action=index&module=edanz_Schedule&view=shared&&hour=0&day=6&month=12&year=2015"><img src="themes/Sugar5/images/calendar_previous.gif?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1" width="6" height="10" alt="Previous" align="absmiddle" border="0" />&nbsp;&nbsp;Previous</a>
+</td>
+					<td align="right" width="50%"><a
+	href="index.php?action=index&module=edanz_Schedule&view=shared&&hour=0&day=20&month=12&year=2015">Next&nbsp;<img src="themes/Sugar5/images/calendar_next.gif?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1" width="6" height="10" alt="Next" align="absmiddle" border="0" /></a>
+</td>
+				</tr>
+			</table>
+
+		</td>
+	</tr>
+</table>
+</td>
+</tr>
+</table>
+<!-- crmprint --><script>		if(window.addEventListener){
+			window.addEventListener("load", checkAlerts, false);
+		}else{
+			window.attachEvent("onload", checkAlerts);
+		}
+</script><!--end body panes-->
+        </td></tr></table>
+    </div>
+    <div class="clear"></div>
+</div>
+<div id="bottomLinks">
+<a href="#" onclick="void window.open('index.php?module=edanz_Schedule&action=index&view=shared&shared_ids[0]=c85001db-0643-bd44-3fd3-52b8dcc99739&due=2015-12-18&point=0&print=true','printwin','menubar=1,status=0,resizable=1,scrollbars=1,toolbar=0,location=1')"><img src='themes/Sugar5/images/print.gif?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1' alt='Print'></a> <a href="#" class="bottomLink" onclick="void window.open('index.php?module=edanz_Schedule&action=index&view=shared&shared_ids[0]=c85001db-0643-bd44-3fd3-52b8dcc99739&due=2015-12-18&point=0&print=true','printwin','menubar=1,status=0,resizable=1,scrollbars=1,toolbar=0,location=1')">Print</a><a href="#top"><img src='themes/default/images/backtotop.gif?s=7ba7c67e08b35a0ea8d3843c66e46c2a&c=1' alt='Back to top'></a> <a href="#top" class="bottomLink">Back to top</a>
+</div>
+<div id="footer">
+	<br />
+    <div>Server response time: 1.33 seconds.<br /></div>
+    <div>
+    &copy; 2004-2011 SugarCRM Inc. The Program is provided AS IS, without warranty.  Licensed under <a href="LICENSE.txt" target="_blank" class="copyRightLink">AGPLv3</a>.<br>This program is free software; you can redistribute it and/or modify it under the terms of the <br><a href="LICENSE.txt" target="_blank" class="copyRightLink"> GNU Affero General Public License version 3</a> as published by the Free Software Foundation, including the additional permission set forth in the source code header.<br>SugarCRM is a trademark of SugarCRM, Inc. All other company and product names may be trademarks of the respective companies with which they are associated.<br /><img style='margin-top: 2px' border='0' width='106' height='23' src='include/images/poweredby_sugarcrm.png' alt='Powered By SugarCRM'>
+
+    </div>
+    <div>
+    Some Icons by <a href="http://p.yusukekamiyamane.com/">Yusuke Kamiyamane</a>. Licensed under a <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 license</a>.<br>
+    </div>
+</div>
+<br><br><br>
+</body>
+</html>

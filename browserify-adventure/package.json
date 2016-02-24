@@ -1,0 +1,12 @@
+{
+    "browser": {
+        "foo": "/usr/local/lib/node_modules/browserify-adventure/problems/shimming_non_commonjs_modules/files/spice-girls.js"
+    },
+    "browserify": {
+        "transform": "browserify-shim"
+    },
+    "browserify-shim": {
+        "foo": "bar"
+    }
+}
+

@@ -1,0 +1,12 @@
+{
+    "browser": {
+        "spice-girls": "/home/weiliang/node_projects/browserify-adventure/8/spice-girls.js"
+    },
+    "browserify": {
+        "transform": "browserify-shim"
+    },
+    "browserify-shim": {
+        "spice-girls": "Girls"
+    }
+}
+

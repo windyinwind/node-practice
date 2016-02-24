@@ -1,0 +1,123 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install', 'through2-map' ]
+2 info using npm@2.11.3
+3 info using node@v0.12.7
+4 verbose node symlink /usr/bin/node
+5 verbose config Skipping project config: /home/weiliang/.npmrc. (matches userconfig)
+6 verbose install initial load of /home/weiliang/package.json
+7 verbose installManyTop reading scoped package data from /home/weiliang/node_modules/concat-stream/package.json
+8 verbose installManyTop reading scoped package data from /home/weiliang/node_modules/connect/package.json
+9 verbose installManyTop reading scoped package data from /home/weiliang/node_modules/duplexer2/package.json
+10 verbose installManyTop reading scoped package data from /home/weiliang/node_modules/ejs/package.json
+11 verbose installManyTop reading scoped package data from /home/weiliang/node_modules/express/package.json
+12 verbose installManyTop reading scoped package data from /home/weiliang/node_modules/formidable/package.json
+13 verbose installManyTop reading scoped package data from /home/weiliang/node_modules/hiredis/package.json
+14 verbose installManyTop reading scoped package data from /home/weiliang/node_modules/hogan/package.json
+15 verbose installManyTop reading scoped package data from /home/weiliang/node_modules/hogan.js/package.json
+16 verbose installManyTop reading scoped package data from /home/weiliang/node_modules/htmlparser/package.json
+17 verbose installManyTop reading scoped package data from /home/weiliang/node_modules/jade/package.json
+18 verbose installManyTop reading scoped package data from /home/weiliang/node_modules/mongodb/package.json
+19 verbose installManyTop reading scoped package data from /home/weiliang/node_modules/mongoose/package.json
+20 verbose installManyTop reading scoped package data from /home/weiliang/node_modules/mysql/package.json
+21 verbose installManyTop reading scoped package data from /home/weiliang/node_modules/nimble/package.json
+22 verbose installManyTop reading scoped package data from /home/weiliang/node_modules/redis/package.json
+23 verbose installManyTop reading scoped package data from /home/weiliang/node_modules/request/package.json
+24 verbose installManyTop reading scoped package data from /home/weiliang/node_modules/split/package.json
+25 verbose installManyTop reading scoped package data from /home/weiliang/node_modules/through2/package.json
+26 verbose installManyTop reading scoped package data from /home/weiliang/node_modules/trumpet/package.json
+27 verbose installManyTop reading scoped package data from /home/weiliang/node_modules/websocket-stream/package.json
+28 info package.json hiredis@0.1.17 No license field.
+29 info package.json ejs@1.0.0 No license field.
+30 info package.json hogan.js@3.0.2 No license field.
+31 info package.json htmlparser@1.7.7 No license field.
+32 info package.json mongoose@3.8.19 No license field.
+33 info package.json redis@0.12.1 No license field.
+34 info package.json mongodb@1.4.19 No license field.
+35 info package.json nimble@0.0.2 No license field.
+36 info package.json formidable@1.0.15 No license field.
+37 verbose readDependencies loading dependencies from /home/weiliang/package.json
+38 silly cache add args [ 'through2-map', null ]
+39 verbose cache add spec through2-map
+40 silly cache add parsed spec { raw: 'through2-map',
+40 silly cache add   scope: null,
+40 silly cache add   name: 'through2-map',
+40 silly cache add   rawSpec: '',
+40 silly cache add   spec: '*',
+40 silly cache add   type: 'range' }
+41 silly addNamed through2-map@*
+42 verbose addNamed "*" is a valid semver range for through2-map
+43 silly addNameRange { name: 'through2-map', range: '*', hasData: false }
+44 silly mapToRegistry name through2-map
+45 silly mapToRegistry using default registry
+46 silly mapToRegistry registry http://registry.npmjs.org/
+47 silly mapToRegistry uri http://registry.npmjs.org/through2-map
+48 verbose addNameRange registry:http://registry.npmjs.org/through2-map not in flight; fetching
+49 verbose request uri http://registry.npmjs.org/through2-map
+50 verbose request no auth needed
+51 info attempt registry request try #1 at 12:37:34
+52 verbose request id 19291cd72f7c992c
+53 http request GET http://registry.npmjs.org/through2-map
+54 http 404 http://registry.npmjs.org/through2-map
+55 verbose bad json <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+55 verbose bad json <html><head>
+55 verbose bad json <title>404 Not Found</title>
+55 verbose bad json </head><body>
+55 verbose bad json <h1>Not Found</h1>
+55 verbose bad json <p>The requested URL /through2-map was not found on this server.</p>
+55 verbose bad json <hr>
+55 verbose bad json <address>Apache/2.2.22 (Ubuntu) Server at registry.npmjs.org Port 80</address>
+55 verbose bad json </body></html>
+56 error registry error parsing json
+57 verbose headers { date: 'Tue, 08 Dec 2015 04:37:34 GMT',
+57 verbose headers   server: 'Apache/2.2.22 (Ubuntu)',
+57 verbose headers   vary: 'Accept-Encoding',
+57 verbose headers   'content-encoding': 'gzip',
+57 verbose headers   'content-length': '243',
+57 verbose headers   'keep-alive': 'timeout=5, max=100',
+57 verbose headers   connection: 'Keep-Alive',
+57 verbose headers   'content-type': 'text/html; charset=iso-8859-1' }
+58 silly get cb [ 404,
+58 silly get   { date: 'Tue, 08 Dec 2015 04:37:34 GMT',
+58 silly get     server: 'Apache/2.2.22 (Ubuntu)',
+58 silly get     vary: 'Accept-Encoding',
+58 silly get     'content-encoding': 'gzip',
+58 silly get     'content-length': '243',
+58 silly get     'keep-alive': 'timeout=5, max=100',
+58 silly get     connection: 'Keep-Alive',
+58 silly get     'content-type': 'text/html; charset=iso-8859-1' } ]
+59 verbose stack SyntaxError: Unexpected token <
+59 verbose stack <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+59 verbose stack <html><head>
+59 verbose stack <title>404 Not Found</title>
+59 verbose stack </head><body>
+59 verbose stack <h1>Not Found</h1>
+59 verbose stack <p>The requested URL /through2-map was not found on this server.</p>
+59 verbose stack <hr>
+59 verbose stack <address>Apache/2.2.22 (Ubuntu) Server at registry.npmjs.org Port 80</address>
+59 verbose stack </body></html>
+59 verbose stack
+59 verbose stack     at Object.parse (native)
+59 verbose stack     at CachingRegistryClient.<anonymous> (/usr/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:197:23)
+59 verbose stack     at /usr/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:176:7
+59 verbose stack     at Gunzip.onEnd (zlib.js:227:5)
+59 verbose stack     at Gunzip.emit (events.js:129:20)
+59 verbose stack     at _stream_readable.js:908:16
+59 verbose stack     at process._tickCallback (node.js:355:11)
+60 verbose cwd /home/weiliang/node_projects/learnyounode
+61 error Linux 3.13.0-71-generic
+62 error argv "/usr/bin/node" "/usr/bin/npm" "install" "through2-map"
+63 error node v0.12.7
+64 error npm  v2.11.3
+65 error Unexpected token <
+65 error <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+65 error <html><head>
+65 error <title>404 Not Found</title>
+65 error </head><body>
+65 error <h1>Not Found</h1>
+65 error <p>The requested URL /through2-map was not found on this server.</p>
+65 error <hr>
+65 error <address>Apache/2.2.22 (Ubuntu) Server at registry.npmjs.org Port 80</address>
+65 error </body></html>
+66 error If you need help, you may report this error at:
+66 error     <https://github.com/npm/npm/issues>
+67 verbose exit [ 1, true ]
