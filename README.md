@@ -1,5 +1,6 @@
-node_projects
-=============
+personal node practice 
 
-for nodejs practice
+practices are from 
+
+http://nodeschool.io/
  
